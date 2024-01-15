@@ -10,7 +10,7 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    TapController controller = Get.put(TapController());
+    TapController controller = Get.find();
     return Scaffold(
       body: SizedBox(
         height: double.maxFinite,
@@ -21,7 +21,7 @@ class HomePage extends StatelessWidget {
             children: [
               GetBuilder<TapController>(builder:(_){
                 return AppButton(title: controller.x.toString(),);},),
-              AppButton(title: "Increse", onTap: (){
+              AppButton(title: "Increase", onTap: (){
                 controller.increaseX();
               }),
               AppButton(title: "Decrease", onTap: (){
